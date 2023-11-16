@@ -1,0 +1,36 @@
+<h1>Acesso</h1>
+<form>
+    <mat-form-field>
+        <mat-label>Salas</mat-label>
+        <mat-select formControlName="professor_id">
+          <mat-option
+            *ngFor="let turma of listaAcesso"
+            [value]="turma.Objeto_id"
+          >
+           
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <mat-select #fontSize value="16px" (selectionChange)="triggerResize()">
+    </mat-select>
+    <mat-form-field [style.fontSize]="fontSize.value">
+        <mat-label>Descricao</mat-label>
+        <textarea matInput
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="5"></textarea>
+    </mat-form-field>
+</form>
+<!-- <a href="#">teste</a> -->
+<span>Data-hora_entrada</span>
+<br>
+<input  type="datetime-local" name="datetime-local" />
+<br />
+<br>
+<span>Data-hora_saida</span>
+<br>
+<input type="datetime-local" name="datetime-local" />
+<br />
+<br />
+<button mat-raised-button color="primary">Salvar</button>
